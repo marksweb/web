@@ -26,6 +26,9 @@
     "@types/sha.js": "^2.4.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "eslint-config-xo-react": "^0.23.0",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
     "faker": "^4.1.0",
     "fetch-mock": "^9.4.0",
     "fs-extra": "^9.0.0",
@@ -37,7 +40,8 @@
     "prettier": "^2.0.4",
     "react-scripts": "^3.4.1",
     "redux-saga-test-plan": "^4.0.0-rc.3",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "xo": "^0.29.1"
   },
   "dependencies": {
     "@coreui/coreui": "^2.1.16",
@@ -77,9 +81,10 @@
     "test": "react-scripts test --env=jsdom",
     "coverage": "react-scripts test --env=jsdom --coverage",
     "codecov": "codecov",
-    "eject": "react-scripts eject",
+    "xo": "xo",
     "format": "prettier --write \"**/*.{js,tsx}\"",
-    "check-format": "prettier --list-different \"**/*.{js,tsx}\""
+    "check-format": "prettier --list-different \"**/*.{js,tsx}\"",
+    "eject": "react-scripts eject"
   },
   "browserslist": [
     "defaults",
@@ -91,6 +96,54 @@
   ],
   "prettier": {
     "arrowParens": "avoid",
-    "trailingComma": "none"
+    "bracketSpacing": true,
+    "singleQuote": false,
+    "trailingComma": "none",
+    "useTabs": false
+  },
+  "xo": {
+    "extends": "xo-react",
+    "prettier": true,
+    "space": true,
+    "envs": [
+      "browser"
+    ],
+    "rules": {
+      "@typescript-eslint/consistent-type-assertions": "off",
+      "@typescript-eslint/member-ordering": "off",
+      "@typescript-eslint/no-empty-function": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/prefer-readonly-parameter-types": "off",
+      "@typescript-eslint/promise-function-async": "off",
+      "camelcase": "off",
+      "capitalized-comments": "off",
+      "import/no-named-as-default": "off",
+      "no-negated-condition": "off",
+      "object-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "promise/prefer-await-to-then": "off",
+      "spaced-comment": "off",
+      "unicorn/filename-case": "off",
+      "unicorn/no-zero-fractions": "off",
+      "unicorn/prefer-query-selector": "off",
+      "unicorn/prevent-abbreviations": "off"
+    },
+    "overrides": [
+      {
+        "files": "**/__tests__/**",
+        "envs": [
+          "jest"
+        ]
+      },
+      {
+        "files": "src/setupTests.tsx",
+        "envs": [
+          "jest"
+        ]
+      }
+    ]
   }
 }
