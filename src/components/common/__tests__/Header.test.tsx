@@ -8,7 +8,7 @@
  * This file is copyright under the latest version of the EUPL.
  * Please see LICENSE file for your rights under this license. */
 
-import React, { MouseEvent } from "react";
+import React from "react";
 import api from "../../../util/api";
 import { shallow } from "enzyme";
 import Header from "../Header";
