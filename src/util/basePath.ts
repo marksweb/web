@@ -20,8 +20,8 @@ export const getBasePath = (): string => {
 
   if (baseElement) {
     return new URL(baseElement.href).pathname;
-  } else {
-    // PUBLIC_URL is supplied by CRA, and will never be undefined
-    return process.env.PUBLIC_URL!;
   }
+
+  // PUBLIC_URL is supplied by CRA, and will never be undefined
+  return process.env.PUBLIC_URL!;
 };
